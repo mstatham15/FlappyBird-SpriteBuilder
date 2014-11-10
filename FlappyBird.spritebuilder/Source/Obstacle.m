@@ -9,7 +9,7 @@
 #import "Obstacle.h"
 
 @implementation Obstacle {
-  
+  CCNode *_topPipe;
   CCNode *_bottomPipe;
 }
 
@@ -21,7 +21,8 @@ static const CGFloat minimumYPosition = 200.f;
 static const CGFloat maximumYPosition = 380.f;
 
 - (void)didLoadFromCCB {
-  
+  _topPipe.physicsBody.collisionType = @"level";
+  _topPipe.physicsBody.sensor = YES;
 
   _bottomPipe.physicsBody.collisionType = @"level";
   _bottomPipe.physicsBody.sensor = YES;
